@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProductUnitViewDlg" widgetVar="ProductUnitViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProductUnitTitle}">
+            <h:form id="ProductUnitViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{productUnitController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_id}"/>
+                        <h:outputText value="#{productUnitController.selected.id}" title="#{bundle.ViewProductUnitTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_name}"/>
+                        <h:outputText value="#{productUnitController.selected.name}" title="#{bundle.ViewProductUnitTitle_name}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_description}"/>
+                        <h:outputText value="#{productUnitController.selected.description}" title="#{bundle.ViewProductUnitTitle_description}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_level}"/>
+                        <h:outputText value="#{productUnitController.selected.level}" title="#{bundle.ViewProductUnitTitle_level}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_parent}"/>
+                        <h:outputText value="#{productUnitController.selected.parent}" title="#{bundle.ViewProductUnitTitle_parent}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_risk}"/>
+                        <h:outputText value="#{productUnitController.selected.risk}" title="#{bundle.ViewProductUnitTitle_risk}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_impact}"/>
+                        <h:outputText value="#{productUnitController.selected.impact}" title="#{bundle.ViewProductUnitTitle_impact}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_stability}"/>
+                        <h:outputText value="#{productUnitController.selected.stability}" title="#{bundle.ViewProductUnitTitle_stability}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_bizOwner}"/>
+                        <h:outputText value="#{productUnitController.selected.bizOwner}" title="#{bundle.ViewProductUnitTitle_bizOwner}"/>
+                        <h:outputText value="#{bundle.ViewProductUnitLabel_techOwner}"/>
+                        <h:outputText value="#{productUnitController.selected.techOwner}" title="#{bundle.ViewProductUnitTitle_techOwner}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProductUnitViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

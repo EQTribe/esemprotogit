@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdunitUserviewCreateDlg" widgetVar="ProdunitUserviewCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateProdunitUserviewTitle}">
+            <h:form id="ProdunitUserviewCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produnitUserviewController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{produnitUserviewController.selected.id}" title="#{bundle.CreateProdunitUserviewTitle_id}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{produnitUserviewController.selected.name}" title="#{bundle.CreateProdunitUserviewTitle_name}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_name}"/>
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_description}" for="description" />
+                        <p:inputText id="description" value="#{produnitUserviewController.selected.description}" title="#{bundle.CreateProdunitUserviewTitle_description}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_level}" for="level" />
+                        <p:inputText id="level" value="#{produnitUserviewController.selected.level}" title="#{bundle.CreateProdunitUserviewTitle_level}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_level}"/>
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_parent}" for="parent" />
+                        <p:inputText id="parent" value="#{produnitUserviewController.selected.parent}" title="#{bundle.CreateProdunitUserviewTitle_parent}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_risk}" for="risk" />
+                        <p:inputText id="risk" value="#{produnitUserviewController.selected.risk}" title="#{bundle.CreateProdunitUserviewTitle_risk}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_impact}" for="impact" />
+                        <p:inputText id="impact" value="#{produnitUserviewController.selected.impact}" title="#{bundle.CreateProdunitUserviewTitle_impact}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_stability}" for="stability" />
+                        <p:inputText id="stability" value="#{produnitUserviewController.selected.stability}" title="#{bundle.CreateProdunitUserviewTitle_stability}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_bizOwner}" for="bizOwner" />
+                        <p:inputText id="bizOwner" value="#{produnitUserviewController.selected.bizOwner}" title="#{bundle.CreateProdunitUserviewTitle_bizOwner}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_techOwner}" for="techOwner" />
+                        <p:inputText id="techOwner" value="#{produnitUserviewController.selected.techOwner}" title="#{bundle.CreateProdunitUserviewTitle_techOwner}" />
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_lvlName}" for="lvlName" />
+                        <p:inputText id="lvlName" value="#{produnitUserviewController.selected.lvlName}" title="#{bundle.CreateProdunitUserviewTitle_lvlName}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_lvlName}"/>
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_bizOwnerName}" for="bizOwnerName" />
+                        <p:inputText id="bizOwnerName" value="#{produnitUserviewController.selected.bizOwnerName}" title="#{bundle.CreateProdunitUserviewTitle_bizOwnerName}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_bizOwnerName}"/>
+                        <p:outputLabel value="#{bundle.CreateProdunitUserviewLabel_techOwnerName}" for="techOwnerName" />
+                        <p:inputText id="techOwnerName" value="#{produnitUserviewController.selected.techOwnerName}" title="#{bundle.CreateProdunitUserviewTitle_techOwnerName}" required="true" requiredMessage="#{bundle.CreateProdunitUserviewRequiredMessage_techOwnerName}"/>
+                      </p:panelGrid>
+                    <p:commandButton actionListener="#{produnitUserviewController.create}" value="#{bundle.Save}" update="display,:ProdunitUserviewListForm:datalist,:growl" oncomplete="handleSubmit(args,'ProdunitUserviewCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ProdunitUserviewCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

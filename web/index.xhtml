@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>ESEM Prototype</title>
+                <h:outputStylesheet name="css/jsfcrud.css"/>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <table border="0" cellspacing="10">
+                        <colgroup align="left">
+                            <col width="225" align="center"/>
+                            <col width="800" align="center" />
+                            <col align="left" />
+                        </colgroup>
+                        <tr>
+                            <th> <a href="index.xhtml"> 
+                                    <img src="resources/images/EQlogo-email.png" width="160" height="79" alt="EQlogo-email"/>
+                                </a>
+                            </th>
+                            <th><h1>ESEM PROTOTYPE</h1><h2>EQTribe Software Engineering Management Platform</h2></th>
+                            <th></th>
+                        </tr>
+                    </table>
+
+
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="80" closable="true" collapsible="true">
+                    <table border="0">
+                        <colgroup align="left">
+                            <col width="225" align="center"/>
+                            <col width="800" align="center" />
+                            <col align="right" />
+                        </colgroup>
+                        <tr>
+                            <th></th>
+                            <th><h2><i>be effective, be efficient</i></h2></th>
+                            <th></th>
+                        </tr>
+                    </table>
+
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="225" header="" collapsible="false">
+                    <table cellpadding="10">
+                        <colgroup align="left">
+                            <col width="20"/>
+                            <col/>
+                            <col/>
+                        </colgroup>
+                        <tr>
+                            <td width="20"></td>
+                            <td>
+                        <p:menu>
+                            <p:submenu label="ESEM Areas">
+                                <p:menuitem value="Product Definition" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                                <p:menuitem value="Product Testing" url="http://www.primefaces.org/documentation.html" />
+                                <p:menuitem value="Product Development" url="http://forum.primefaces.org/" />
+                                <p:menuitem value="Defect Management" url="http://www.primefaces.org/themes.html" />
+                            </p:submenu>
+                        </p:menu>
+                        </td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                        <p:menubar>
+                            <p:submenu label="#{bundle.Maintenance}">
+                                <p:menuitem outcome="/prodLevelDetail/List" value="Product Definition Levels" />
+                                <p:menuitem outcome="/productUnit/List" value="Product Units" />
+                                <p:menuitem outcome="/person/List" value="Persons" />
+                            </p:submenu>
+                        </p:menubar>
+                        </td>
+                        <td></td>
+                        </tr>
+                    </table>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+
+                    <h:form id="ProdunitUserviewListForm">
+                        <p:panel header="#{bundle.ListProdunitUserviewTitle}">
+                            <p:dataTable id="datalist" value="#{produnitUserviewController.items}" var="item"
+                                         selectionMode="single" selection="#{produnitUserviewController.selected}"
+                                         paginator="true"
+                                         rowKey="#{item.id}"
+                                         rows="10"
+                                         rowsPerPageTemplate="10,20,30,40,50"
+                                         >
+
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_id}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.id}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_name}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.name}"/>
+                                </p:column>
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_lvlName}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.lvlName}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_parent}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.parent}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_risk}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.risk}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_impact}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.impact}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_stability}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.stability}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_bizOwnerName}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.bizOwnerName}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_techOwnerName}"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.techOwnerName}"/>
+                                </p:column>
+
+                                <f:facet name="footer">
+
+                                    <p:commandButton id="detailsButton" icon="ui-icon-search" 
+                                                     value="#{bundle.Details}" 
+                                                     action="/produnitUserview/List" />
+                                </f:facet>
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>
+
+                </p:layoutUnit>
+
+            </p:layout>
+
+
+        </h:body>
+
+
+
+
+    </f:view>
+</html>
+

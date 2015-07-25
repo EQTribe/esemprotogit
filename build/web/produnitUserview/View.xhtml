@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ProdunitUserviewViewDlg" widgetVar="ProdunitUserviewViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewProdunitUserviewTitle}">
+            <h:form id="ProdunitUserviewViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{produnitUserviewController.selected != null}">
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_id}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.id}" title="#{bundle.ViewProdunitUserviewTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_name}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.name}" title="#{bundle.ViewProdunitUserviewTitle_name}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_description}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.description}" title="#{bundle.ViewProdunitUserviewTitle_description}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_level}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.level}" title="#{bundle.ViewProdunitUserviewTitle_level}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_parent}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.parent}" title="#{bundle.ViewProdunitUserviewTitle_parent}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_risk}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.risk}" title="#{bundle.ViewProdunitUserviewTitle_risk}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_impact}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.impact}" title="#{bundle.ViewProdunitUserviewTitle_impact}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_stability}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.stability}" title="#{bundle.ViewProdunitUserviewTitle_stability}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_bizOwner}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.bizOwner}" title="#{bundle.ViewProdunitUserviewTitle_bizOwner}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_techOwner}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.techOwner}" title="#{bundle.ViewProdunitUserviewTitle_techOwner}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_lvlName}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.lvlName}" title="#{bundle.ViewProdunitUserviewTitle_lvlName}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_bizOwnerFname}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.bizOwnerFname}" title="#{bundle.ViewProdunitUserviewTitle_bizOwnerFname}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_bizOwnerLname}"/>
+                        <h:outputText value="#{produnitUserviewController.selected.bizOwnerLname}" title="#{bundle.ViewProdunitUserviewTitle_bizOwnerLname}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_techOwnerName}"/>
+                        <h:outputText value="#{bundle.ViewProdunitUserviewLabel_techOwnerName}"/>
+                      </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ProdunitUserviewViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
