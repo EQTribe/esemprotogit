@@ -1,4 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- testing-->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -9,7 +10,7 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>ESEM Prototype</title>
+                <title>USEM Prototype</title>
                 <h:outputStylesheet name="css/jsfcrud.css"/>
             </f:facet>
         </h:head>
@@ -27,15 +28,13 @@
                         </colgroup>
                         <tr>
                             <th> <a href="index.xhtml"> 
-                                    <img src="resources/images/EQlogo-email.png" width="160" height="79" alt="EQlogo-email"/>
+                                    <img src="resources/images/EQlogo.png" width="160" height="79" alt="EQlogo-email"/>
                                 </a>
                             </th>
-                            <th><h1>ESEM PROTOTYPE</h1><h2>EQTribe Software Engineering Management Platform</h2></th>
+                            <th><h1>USEM PROTOTYPE</h1><h2>EQTribe Unified Software Engineering Management Platform</h2></th>
                             <th></th>
                         </tr>
                     </table>
-
-
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="80" closable="true" collapsible="true">
@@ -64,29 +63,30 @@
                         <tr>
                             <td width="20"></td>
                             <td>
-                        <p:menu>
-                            <p:submenu label="ESEM Areas">
-                                <p:menuitem value="Product Definition" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
-                                <p:menuitem value="Product Testing" url="http://www.primefaces.org/documentation.html" />
-                                <p:menuitem value="Product Development" url="http://forum.primefaces.org/" />
-                                <p:menuitem value="Defect Management" url="http://www.primefaces.org/themes.html" />
-                            </p:submenu>
-                        </p:menu>
-                        </td>
-                        <td></td>
+                                <p:menu>
+                                    <p:submenu label="ESEM Areas">
+                                        <p:menuitem value="Product Definition" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                                        <p:menuitem value="Product Testing" url="http://www.primefaces.org/documentation.html" />
+                                        <p:menuitem value="Product Development" url="http://forum.primefaces.org/" />
+                                        <p:menuitem value="Defect Management" url="http://www.primefaces.org/themes.html" />
+                                    </p:submenu>
+                                </p:menu>
+                            </td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>
-                        <p:menubar>
-                            <p:submenu label="#{bundle.Maintenance}">
-                                <p:menuitem outcome="/prodLevelDetail/List" value="Product Definition Levels" />
-                                <p:menuitem outcome="/productUnit/List" value="Product Units" />
-                                <p:menuitem outcome="/person/List" value="Persons" />
-                            </p:submenu>
-                        </p:menubar>
-                        </td>
-                        <td></td>
+                                <p:menubar>
+                                    <p:submenu label="#{bundle.Maintenance}">
+                                        <p:menuitem outcome="/prodLevelDetail/List" value="Product Definition Levels" />
+                                        <p:menuitem outcome="/productUnit/List" value="Product Units" />
+                                        <p:menuitem outcome="/person/List" value="Persons" />
+                                        
+                                    </p:submenu>
+                                </p:menubar>
+                            </td>
+                            <td></td>
                         </tr>
                     </table>
                 </p:layoutUnit>
@@ -104,12 +104,6 @@
                                          >
 
 
-                                <p:column>
-                                    <f:facet name="header">
-                                        <h:outputText value="#{bundle.ListProdunitUserviewTitle_id}"/>
-                                    </f:facet>
-                                    <h:outputText value="#{item.id}"/>
-                                </p:column>
                                 <p:column>
                                     <f:facet name="header">
                                         <h:outputText value="#{bundle.ListProdunitUserviewTitle_name}"/>
@@ -173,13 +167,13 @@
                 </p:layoutUnit>
 
             </p:layout>
-
-
         </h:body>
-
-
-
-
+        
+                
+                        
+                                
+                                        
+                                        
     </f:view>
 </html>
 
